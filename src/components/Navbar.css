@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 3px solid lightgray;
+  height: 90px;
+  background-color: aliceblue;
+}
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: xx-large;
+}
+#board {
+  color: orange;
+}
+#search {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+#search input {
+  border-radius: 20px;
+  width: 665px;
+  border-color: blue;
+
+}
+#search button {
+  position: absolute;
+  left: 643px;
+  top: 1.7px;
+  color: white;
+  border: none;
+  font-size: large;
+  background-color: blue;
+  border-radius: 50%;
+}
+#search button:hover {
+  background-color: orangered;
+  color: white;
+  border-radius: 90%;
+  border: none;
+  font-size: xx-larger;
+}
+.date #datecolor {
+  display: flex;
+  color: orange;
+  font-size: xx-large;
+  justify-content: center;
+}
