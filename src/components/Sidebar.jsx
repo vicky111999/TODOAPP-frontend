@@ -8,33 +8,38 @@ import { GoTasklist } from "react-icons/go";
 import { IoMdSettings } from "react-icons/io";
 import { MdHelp } from "react-icons/md";
 import { RiLogoutBoxRFill } from "react-icons/ri";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const Navigate = useNavigate()
+
+  const logout =()=>{
+    Navigate("/login")
+  }
   return (
     <>
-      <div class="sidebar-container">
+      <div className="sidebar-container">
         <img src={pic} alt="" />
         <div class="items">
           <ul>
-            <li>
-              <IoHome /> DashBoard
+            <li >
+              <Link to="/" className="navlink"><IoHome /> DashBoard</Link>
             </li>
             <li>
-              <FaTasks /> All Task
+             <NavLink to="/Alltask" className="navlink"><FaTasks /> All Task</NavLink> 
             </li>
             <li>
-              <GoTasklist />
-              Categories
+              <NavLink to="/Categories" className="navlink"><GoTasklist />Categories</NavLink>
             </li>
             <li>
-              <IoMdSettings /> Setting
+              <NavLink to="/Setting" className="navlink"><IoMdSettings /> Setting</NavLink>
             </li>
             <li>
-              <MdHelp /> Help
+              <NavLink to="/Help" className="navlink"><MdHelp /> Help</NavLink>
             </li>
           </ul>
         </div>
-        <button>
+        <button id="btnside" onClick={logout}>
           <RiLogoutBoxRFill /> Logout
         </button>
       </div>

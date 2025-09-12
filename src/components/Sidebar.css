@@ -1,12 +1,10 @@
-.items {
-  margin-top: 90px;
-  width: 150px;
-}
-ul {
+
+ul { 
   display: inline;
   list-style: none;
 }
 li {
+
   font-size: large;
   margin-bottom: 30px;
 }
@@ -16,23 +14,31 @@ li:hover {
   border-radius: 20px;
 }
 img {
-  position: absolute;
+
   width: 100px;
-  left: 23px;
   border-radius: 50%;
 }
 .sidebar-container {
   position: relative;
   background-color: orange;
+  border: 1px solid red;
 }
-.sidebar-container button {
+ #btnside {
   background-color: transparent;
   border: none;
   position: absolute;
   bottom: 20px;
 }
-.sidebar-container button:hover {
+ #btnside:hover {
   color: white;
   background-color: red;
   border-radius: 20px;
+}
+.navlink
+{
+  text-decoration: none;
+  display: block;
+}
+.navlink:hover{
+  color : white
 }

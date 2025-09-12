@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-evenly;
   border-bottom: 3px solid lightgray;
-  height: 90px;
+  height: 17vh;
   background-color: aliceblue;
 }
 #logo {
@@ -29,7 +29,7 @@
 #search button {
   position: absolute;
   left: 643px;
-  top: 1.7px;
+  top: 1px;
   color: white;
   border: none;
   font-size: large;
