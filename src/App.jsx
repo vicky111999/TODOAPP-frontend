@@ -1,11 +1,8 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Addtask from './pages/Addtask'
-import Searchresult from './pages/Searchresult'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   return (

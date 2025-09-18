@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Navbar.css";
 import { CiSearch } from "react-icons/ci";
 import { BiTask } from "react-icons/bi";
-const Navbar = ({newt}) => {
+const Navbar = ({onSearch}) => {
   const [currentdate, setCurrentdate] = useState(new Date());
   const [searches,setSearches]=useState("")
   const [success,setSuccess] = useState("")
@@ -20,11 +20,10 @@ const Navbar = ({newt}) => {
     axios.get("http://localhost:3002/api/user/categories",{params:task})
         .then((res)=>{setSuccess(res.data.data)})
         .catch((err)=>{console.log(err)})
-    
-
-          newt(success)
-      
-  }
+  
+        onSearch(success)
+  
+      }
 
   return (
     <>
@@ -44,7 +43,7 @@ const Navbar = ({newt}) => {
           </div>
           <div className="date">
             <div id="datecolor">
-              {currentdate.toLocaleDateString("en-US", { weekday: "long" })}
+              {currentdate.toLocaleDateString('en-Us',{weekday:"long"})}
             </div>
             {currentdate.toLocaleString()}
           </div>

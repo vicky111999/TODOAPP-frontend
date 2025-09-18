@@ -43,7 +43,7 @@
   border: none;
   font-size: xx-larger;
 }
-.date #datecolor {
+ #datecolor {
   display: flex;
   color: orange;
   font-size: xx-large;

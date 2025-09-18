@@ -5,7 +5,8 @@ import "./Layout.css";
 import Name from "./Name";
 import Chart from "./Chart";
 import Pending from "./Pending";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Searchresult from "../pages/Searchresult";
 
 const Layout = ({ children }) => {
       
@@ -22,23 +23,14 @@ const Layout = ({ children }) => {
   }
   return (
     <div className="main">
-      <Navbar newt={searchbar} />
+      <Navbar onSearch={searchbar} />
       <div className="sub1">
         <Sidebar />
         <div className="sub2">
           <Name />
           <div className="sub3" id="result-container">
-            {/* {result ? (result.map((item)=>{ return(<div key={item.id} >
-        <div className="cards">
-        <div className="carditems1">{item.itemcategory}</div>
-        <div className="carditem2"><p>{item.itemdetails}</p></div>
-        <div className="carditem3">{item.MentionDate}</div>
-        <div><input type='checkbox' className="cardbtn"></input>Completed</div>
-        </div>
-        </div>              
-       )
-      })):(children)} */}
-      {children}
+      {result ? (<Searchresult  task={result} />) :
+      (children)}
             <div className="sub4">
               <Chart />
               <div className="sub5">

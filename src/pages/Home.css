@@ -21,7 +21,7 @@
 }
 .main
 {
-    position: relative;
+    position: relative
 }
 #btn{
     position: absolute;
@@ -50,4 +50,20 @@
  .content{
     height: 62vh;
     overflow-y: auto;
+    position: relative;
  }
+ .edit button
+ {
+    border: none;
+    background-color: blue;
+    border-radius: 20px;
+    color: white;
+    top: 0;
+    right: 0;
+ }
+ .edit button:hover{
+    border: none;
+    background-color: red;
+
+ }
+ 

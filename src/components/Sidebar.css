@@ -21,7 +21,6 @@ img {
 .sidebar-container {
   position: relative;
   background-color: orange;
-  border: 1px solid red;
 }
  #btnside {
   background-color: transparent;

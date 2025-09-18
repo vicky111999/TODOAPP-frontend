@@ -3,3 +3,13 @@
     height: 40%;
     color: green;
 }
+.name img{
+     
+    width: 30px;
+    height: auto;
+}
+.name{
+    display: flex;
+    justify-content: center;
+    color:blue;
+}

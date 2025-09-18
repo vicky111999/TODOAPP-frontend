@@ -1,8 +1,11 @@
 import React from 'react'
+import "./Chart.css"
 
 const Name = () => {
   return (
-    <div class="name">Name</div>
+  <>    
+   <div className="name">HI USER<img src='/wave.png' alt='Hi logo'/> </div>
+</>
   )
 }
 
