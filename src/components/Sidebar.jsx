@@ -23,7 +23,7 @@ const Sidebar = () => {
         <div class="items">
           <ul>
             <li >
-              <Link to="/" className="navlink"><IoHome /> DashBoard</Link>
+              <NavLink to="/" className="navlink"><IoHome /> DashBoard</NavLink>
             </li>
             <li>
              <NavLink to="/Alltask" className="navlink"><FaTasks /> All Task</NavLink> 

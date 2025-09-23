@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState} from 'react'
 import axios from 'axios'
 import "./Addtask.css"
 import { IoArrowBackCircle } from "react-icons/io5";
@@ -15,7 +15,7 @@ const Addtask = () => {
 
     const add=()=>{
         const task = {title:title,details:detail,date:date}
-            axios.post("http://localhost:3002/api/user/todoAdd",task)
+            axios.post("https://todoapp-backend-fvo5.onrender.com/api/user/todoAdd",task)
             .then((res)=>{setSuccess(res.data.data)})
             .catch((err)=>{console.log(err)})
     }
