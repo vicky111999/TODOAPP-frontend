@@ -6,7 +6,9 @@ const Pending = () => {
   const[tasks,setTasks]=useState("")
 
   useEffect(()=>{
-      axios.get("http://localhost:3002/api/user/pending")
+
+      const apiurl= import.meta.env.VITE_API_URL
+      axios.get(`${apiurl}/pending`)
           .then((res)=>{setTasks(res.data.data)})
           .catch((err)=>{console.log(err.toString())})
   },[])

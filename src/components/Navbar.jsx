@@ -17,7 +17,8 @@ const Navbar = ({onSearch}) => {
   const searcher =(e)=>{
     e.preventDefault()
     const task={title:searches}
-    axios.get("http://localhost:3002/api/user/categories",{params:task})
+    const apiurl= import.meta.env.VITE_API_URL
+    axios.get(`${apiurl}/categories`,{params:task})
         .then((res)=>{setSuccess(res.data.data)})
         .catch((err)=>{console.log(err)})
   

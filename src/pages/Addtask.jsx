@@ -15,7 +15,8 @@ const Addtask = () => {
 
     const add=()=>{
         const task = {title:title,details:detail,date:date}
-            axios.post("https://todoapp-backend-fvo5.onrender.com/api/user/todoAdd",task)
+         const apiurl= import.meta.env.VITE_API_URL
+            axios.post(`${apiurl}/todoAdd`,task)
             .then((res)=>{setSuccess(res.data.data)})
             .catch((err)=>{console.log(err)})
     }

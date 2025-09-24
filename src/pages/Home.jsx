@@ -10,7 +10,8 @@ const Home = () => {
    const Navigate=useNavigate()
   
   useEffect(()=>{
-    axios.get("http://localhost:3002/api/user")
+     const apiurl= import.meta.env.VITE_API_URL
+    axios.get(`${apiurl}`)
           .then((res)=>{setTasks(res.data.data)})
           .catch((err)=>{console.log(err)})
   },[])
