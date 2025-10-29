@@ -6,7 +6,6 @@
     text-align: center;
     padding: 10px 0 10px 0;
     margin-bottom: 1px;
-
 }
 .carditem1,.carditems1
 {
@@ -66,4 +65,9 @@
     background-color: red;
 
  }
- 
+ .contentpending
+ {
+      height: 42vh;
+    overflow-y: auto;
+    position: relative;
+ }

@@ -5,7 +5,8 @@ const Searchresult = ({task}) => {
     return (
     <>
     <div className='main'>
-          <h1 id="up">SEARCH RESULTS</h1>     
+          <h1 id="up">SEARCH RESULTS</h1> 
+          <div className='content'>   
          {task ? (task.map((item)=>{ return(<div key={item.id} >
         <div className="cards">
         <div className="carditems1">{item.itemcategory}</div>
@@ -18,6 +19,7 @@ const Searchresult = ({task}) => {
        )
       })):["NO Task Available"]}
      </div>
+     </div> 
   </>
   )
 }

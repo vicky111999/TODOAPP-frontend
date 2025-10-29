@@ -18,7 +18,7 @@ const Navbar = ({onSearch}) => {
     e.preventDefault()
     const task={title:searches}
     const apiurl= import.meta.env.VITE_API_URL
-    axios.get(`${apiurl}/categories`,{params:task})
+    axios.get(`${apiurl}/api/user/categories`,{params:task})
         .then((res)=>{setSuccess(res.data.data)})
         .catch((err)=>{console.log(err)})
   
@@ -32,9 +32,9 @@ const Navbar = ({onSearch}) => {
         <div className="container">
           <div id="logo">
             <BiTask />
-            <h1>Dash</h1>
+            <h1>TODO</h1>
 
-            <h1 id="board">Board</h1>
+            <h1 id="board">LIST</h1>
           </div>
           <div id="search">
             <input type="text" value={searches} placeholder="Search by Date or Categories" onChange={(e)=>setSearches(e.target.value)}></input>

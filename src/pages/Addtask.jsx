@@ -1,8 +1,10 @@
-import React,{ useState} from 'react'
+import React,{ useEffect, useState} from 'react'
 import axios from 'axios'
 import "./Addtask.css"
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Addtask = () => {
 
@@ -12,13 +14,33 @@ const Addtask = () => {
     const [success,setSuccess]=useState("")
     
     const Navigate = useNavigate()
+    const location = useLocation()
+
+    const findtodo = location.state?.item || null
+
+      useEffect(() => {
+    if (findtodo) {
+      setTitle(findtodo.itemcategory);
+      setDetail(findtodo.itemdetails)
+      setDate(findtodo.MentionDate)
+    }
+  }, [findtodo]);
 
     const add=()=>{
+
+      if(!findtodo){
         const task = {title:title,details:detail,date:date}
          const apiurl= import.meta.env.VITE_API_URL
-            axios.post(`${apiurl}/todoAdd`,task)
-            .then((res)=>{setSuccess(res.data.data)})
+            axios.post(`${apiurl}/api/user/todoAdd`,task)
+            .then((res)=>{setSuccess(res.data.data)},toast.info("Task Added successfully! ✅"))
             .catch((err)=>{console.log(err)})
+      }
+     const task = {title:title,details:detail,date:date}
+         const apiurl= import.meta.env.VITE_API_URL
+            axios.put(`${apiurl}/api/user/update/${findtodo._id}`,task)
+            .then((res)=>{setSuccess(res.data.data)},toast.info("Task Updated successfully! ✏️"))
+            .catch((err)=>{console.log(err)})  
+    
     }
 
     return (

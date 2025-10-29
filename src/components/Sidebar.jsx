@@ -20,16 +20,16 @@ const Sidebar = () => {
     <>
       <div className="sidebar-container">
         <img src={pic} alt="" />
-        <div class="items">
+        <div className="items">
           <ul>
             <li >
-              <NavLink to="/" className="navlink"><IoHome /> DashBoard</NavLink>
+              <NavLink to="/" className="navlink"><IoHome /> Home</NavLink>
             </li>
             <li>
              <NavLink to="/Alltask" className="navlink"><FaTasks /> All Task</NavLink> 
             </li>
             <li>
-              <NavLink to="/Categories" className="navlink"><GoTasklist />Categories</NavLink>
+              <NavLink to="/Categories" className="navlink"><GoTasklist />Completed</NavLink>
             </li>
             <li>
               <NavLink to="/Setting" className="navlink"><IoMdSettings /> Setting</NavLink>
