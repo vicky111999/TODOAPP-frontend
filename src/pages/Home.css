@@ -1,4 +1,4 @@
-.card,.cards
+.card,.cards,.tasks
 {
     background-color: red;
     border: black 2px solid;
@@ -70,4 +70,8 @@
       height: 42vh;
     overflow-y: auto;
     position: relative;
+ }
+
+ .tasks{
+    background-color: lightgreen;
  }

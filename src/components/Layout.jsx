@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
 
   const searchbar = (r)=>{
       setResult(r)
-      console.log(r)
   }
   return (
     <div className="main">
@@ -29,7 +28,7 @@ const Layout = ({ children }) => {
         <div className="sub2">
           <Name />
           <div className="sub3" id="result-container">
-      {result ? (<Searchresult  task={result} />) :
+      {result ? (<Searchresult  tasksearch={result} />) :
       (children)}
             <div className="sub4">
               <Chart />

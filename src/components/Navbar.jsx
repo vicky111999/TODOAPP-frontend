@@ -15,14 +15,8 @@ const Navbar = ({onSearch}) => {
     return () => clearInterval(interval);
   }, []);
   const searcher =(e)=>{
-    e.preventDefault()
-    const task={title:searches}
-    const apiurl= import.meta.env.VITE_API_URL
-    axios.get(`${apiurl}/api/user/categories`,{params:task})
-        .then((res)=>{setSuccess(res.data.data)})
-        .catch((err)=>{console.log(err)})
-  
-        onSearch(success)
+   
+        onSearch(searches)
   
       }
 

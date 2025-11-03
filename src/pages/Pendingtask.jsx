@@ -5,14 +5,14 @@ import { MdAddTask } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const Home = () => {
+const Pendingtask = () => {
   const [tasks,setTasks]=useState([])
   const [task,setTask]=useState([])
    const Navigate=useNavigate()
   
   useEffect(()=>{
      const apiurl= import.meta.env.VITE_API_URL
-    axios.get(`${apiurl}/api/user`)
+    axios.get(`${apiurl}/api/user/pendings`)
           .then((res)=>{setTasks(res.data.data)})
           .catch((err)=>{console.log(err)})
   },[tasks])
@@ -34,18 +34,18 @@ const Home = () => {
      const handlecomplete = (id, newstatus)=>{
          const apiurl= import.meta.env.VITE_API_URL
         axios.patch(`${apiurl}/api/user/status/${id}`,{completed:newstatus})
-           .then((res)=>setTask(res.data.data),toast.success(newstatus == true ? "Task completed successfully! ✅" :  "Task uncompleted! ❌"))
+           .then((res)=>setTask(res.data.data),toast.success(newstatus ? "Task completed successfully! ✅" :  "Task uncompleted! ❌"))
            .catch((err)=>console.log(err))
         }
   return (
     <>
     <div className="main">
-      <h1 id='up' >UPCOMING TASKS</h1>
+      <h1 id='up' >COMPLETED TASKS</h1>
       <button id='btn' onClick={clicked}><MdAddTask/>  ADD TASK</button>
       <div className="content">
-      {tasks.map((item)=>{
+      {tasks?.map((item)=>{
        return(<div key={item.id} >
-        <div className="cards">
+        <div className="tasks">
         <div className="carditems1 ">{item.itemcategory}</div>
         <div className="carditem2"><p>{item.itemdetails}</p></div>
         <div className="carditem3">{item.MentionDate}</div>
@@ -63,4 +63,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Pendingtask

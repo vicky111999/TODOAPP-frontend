@@ -29,19 +29,16 @@ const Sidebar = () => {
              <NavLink to="/Alltask" className="navlink"><FaTasks /> All Task</NavLink> 
             </li>
             <li>
-              <NavLink to="/Categories" className="navlink"><GoTasklist />Completed</NavLink>
+              <NavLink to="/Completedtask" className="navlink"><GoTasklist />Completed Task</NavLink>
             </li>
             <li>
-              <NavLink to="/Setting" className="navlink"><IoMdSettings /> Setting</NavLink>
+              <NavLink to="/Pendingtask" className="navlink"><IoMdSettings />Pending Task</NavLink>
             </li>
             <li>
               <NavLink to="/Help" className="navlink"><MdHelp /> Help</NavLink>
             </li>
           </ul>
         </div>
-        <button id="btnside" onClick={logout}>
-          <RiLogoutBoxRFill /> Logout
-        </button>
       </div>
     </>
   );

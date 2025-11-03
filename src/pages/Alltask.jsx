@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { MdAddTask } from "react-icons/md";
 
 const Alltask = () => {
 const [tasks,setTasks]=useState([])
@@ -13,7 +14,7 @@ const [task,setTask]=useState([])
         axios.get(`${apiurl}/api/user/alltask`)
               .then((res)=>{setTasks(res.data.data)})
               .catch((err)=>{console.log(err)})
-      },[])
+      },[tasks])
       const clicked=()=>{
          Navigate("/Addtask")
       }
@@ -25,13 +26,21 @@ const [task,setTask]=useState([])
          const apiurl= import.meta.env.VITE_API_URL
     axios.delete(`${apiurl}/api/user/delete/${id}`)
           .then((res)=>setTask(res.data),toast.success("Task deleted successfully! 🗑️"))
-          .catch((err)=>console.log(err),toast.error("Error deleting task ❌"))
+          .catch((err)=>console.log(err))
     }
+
+    const handlecomplete = (id, newstatus)=>{
+         const apiurl= import.meta.env.VITE_API_URL
+        axios.patch(`${apiurl}/api/user/status/${id}`,{completed:newstatus})
+           .then((res)=>setTask(res.data.data),toast.success(newstatus ? "Task completed successfully! ✅" :  "Task uncompleted! ❌"))
+           .catch((err)=>console.log(err))
+        }
 
     return (
     <>    
         <div className="main">
-          <h1 id='up' >UPCOMING TASKS</h1>
+          <h1 id='up' >ALL TASKS</h1>
+          <button id='btn' onClick={clicked}><MdAddTask/>  ADD TASK</button>
           <div className="content">
           {tasks.map((item)=>{
            return(<div key={item.id} >
@@ -39,7 +48,7 @@ const [task,setTask]=useState([])
             <div className="carditems1 ">{item.itemcategory}</div>
             <div className="carditem2"><p>{item.itemdetails}</p></div>
             <div className="carditem3">{item.MentionDate}</div>
-            <div><input type='checkbox' className="cardbtn"></input>Completed</div>
+            <div><input type='checkbox' className="cardbtn" checked= {item.completed}onChange={(e)=>handlecomplete(item._id,e.target.checked)}></input>Completed</div>
             <button onClick={()=>handleedit(item)}>✏️</button><button onClick={()=>handledelete(item._id)}>🗑️</button>
             </div>
             </div>              

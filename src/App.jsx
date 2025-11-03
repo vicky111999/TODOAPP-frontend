@@ -9,6 +9,8 @@ import Alltask from './pages/Alltask'
 import Help from './pages/Help'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/ReactToastify.css"
+import Completedtasks from './pages/Completedtasks'
+import Pendingtask from './pages/Pendingtask'
 const App = () => {
   return (
     <Provider store={store}>
@@ -21,6 +23,8 @@ const App = () => {
         <Route path="/Addtask" element={<Addtask/>}/>
         <Route path="/Alltask" element={<Alltask/>}></Route>
         <Route path="/Help" element={<Help/>}></Route>
+        <Route path="/Completedtask" element={<Completedtasks/>}></Route>
+        <Route path="/Pendingtask" element={<Pendingtask/>}></Route>
     </Routes>
   </div>
     </Layout>
