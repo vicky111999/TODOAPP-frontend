@@ -1,16 +1,17 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border-bottom: 3px solid lightgray;
   height: 17vh;
   background-color: aliceblue;
+  width: 100%;
 }
 #logo {
   display: flex;
   align-items: center;
   gap: 2px;
-  font-size: xx-large;
+  font-size: 2rem;
 }
 #board {
   color: orange;
@@ -19,22 +20,21 @@
   display: flex;
   position: relative;
   align-items: center;
+  flex:1;
+  /* padding-left: 10px; */
 }
 #search input {
   border-radius: 20px;
-  width: 665px;
   border-color: blue;
-
+  flex: 1;
+  min-width: 92%;
 }
 #search button {
-  position: absolute;
-  left: 643px;
-  top: 1px;
   color: white;
   border: none;
   font-size: large;
   background-color: blue;
-  border-radius: 50%;
+  border-radius: 40%;
 }
 #search button:hover {
   background-color: orangered;
@@ -46,6 +46,26 @@
  #datecolor {
   display: flex;
   color: orange;
-  font-size: xx-large;
+  font-size: 1.5rem;
   justify-content: center;
+}
+
+@media(max-width:768px){
+  #logo {
+  gap: 2px;
+  font-size: 1.5rem;
+}
+.date,#datecolor {
+  font-size: 1rem;
+}
+}
+@media(max-width:480px){
+
+   #logo {
+  gap: 2px;
+  font-size: 1rem;
+}
+.date,#datecolor {
+  font-size: 0.5rem;
+}
 }

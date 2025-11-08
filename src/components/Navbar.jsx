@@ -1,20 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./Navbar.css";
 import { CiSearch } from "react-icons/ci";
 import { BiTask } from "react-icons/bi";
 const Navbar = ({onSearch}) => {
   const [currentdate, setCurrentdate] = useState(new Date());
   const [searches,setSearches]=useState("")
-  const [success,setSuccess] = useState("")
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentdate(new Date());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  const searcher =(e)=>{
+  const searcher =()=>{
    
         onSearch(searches)
   
@@ -27,7 +25,6 @@ const Navbar = ({onSearch}) => {
           <div id="logo">
             <BiTask />
             <h1>TODO</h1>
-
             <h1 id="board">LIST</h1>
           </div>
           <div id="search">
