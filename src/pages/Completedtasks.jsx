@@ -27,7 +27,7 @@ const Completedtasks = () => {
     const handledelete =(id)=>{
          const apiurl= import.meta.env.VITE_API_URL
     axios.delete(`${apiurl}/api/user/delete/${id}`)
-          .then((res)=>setTask(res.data),toast.success("Task deleted successfully! 🗑️"))
+          .then((res)=>setTask(res.data),toast.success(`Task deleted successfully! 🗑️ ${task}`))
           .catch((err)=>console.log(err))
     }
 
